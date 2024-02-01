@@ -10,7 +10,8 @@ app.get("./api/contacts",(req,res)=>{
     res.status(200).json({message:"get all contacts"});
 });
 app.use(express.json());
-app.use("/api/contacts", require("./routes/contacts-routes"))
+app.use("/api/contacts", require("./routes/contacts-routes"));
+app.use("/api/users", require("./routes/userRoutes"));
 app.use(errorhandler);
 app.listen(port, () => {
     console.log(`server is runing on ${port}`);
